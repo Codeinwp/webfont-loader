@@ -182,6 +182,7 @@ if ( ! class_exists( 'WPTT_WebFont_Loader' ) ) {
 
 			//If the content path changed delete local fonts
 			if ( get_site_option( 'wptt_neve_last_content_path' , false ) !== $this->get_base_path() ) {
+				delete_site_option( 'downloaded_font_files' );
 				$this->delete_fonts_folder();
 			} else {
 				// If we already have the local file, return its contents.
